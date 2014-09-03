@@ -76,7 +76,7 @@ function onSuccess(data, status)
 	localStorage.setItem('re_account',$('#re_account').val());
 	data = jQuery.parseJSON(data);
 	if(data.auth =='success'){
-			url_str="weclome.html";
+			url_str="welcome.html";
 			window.location= url_str;
 //		href_load('search.html');
 	} else {
