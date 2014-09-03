@@ -147,6 +147,7 @@ $(document).ready(function(){
 					j_date:b[split[1]]['j_date']
 				}
 			});
+			$(this).attr("disabled",true);
 				
 
 			//alert(b[split[1]]['j_date']+","+b[split[1]]['j_name']+","+b[split[1]]['j_cname']+","+b[split[1]]['j_url']+","+b[split[1]]['j_address']);
@@ -156,11 +157,11 @@ $(document).ready(function(){
 
 function success(data)
 {
-	alert(data);
-	console.log(data);
+//	alert(data);
+	console.log('success');
 }
 
 function error(data)
 {
-	alert(data);
+//	alert(data);
 }
