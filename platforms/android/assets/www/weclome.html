@@ -6,24 +6,41 @@
 		<link rel="stylesheet" href="./js/jquery.mobile-1.4.3.min.css">
 		<script src="./js/jquery-1.7.1.min.js"></script>
 		<script src="./js/jquery.mobile-1.4.3.min.js"></script>
+<<<<<<< HEAD
 <!-- 開啟推播功能 
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script type="text/javascript" src='js/gcm.js'></script> 
 	<script type="text/javascript" src="js/PushNotification.js"></script>	
 -->	
+=======
+<!--		開啟推播功能 
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" src='js/gcm.js'></script> 
+		<script type="text/javascript" src="js/PushNotification.js"></script>
+-->		
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 		<script>
 		$(document).ready(function(){
 			
 			//var a=localStorage.getItem("name");
+<<<<<<< HEAD
 			if(localStorage.getItem("name")=='')
 				localStorage.setItem("name","A0028338");
 			alert(localStorage.getItem("name"));
+=======
+			
+			//alert(localStorage.getItem("name"));
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 			
 			$("#job").click(function(){
 				var request = $.ajax({
 					type: "post",	
+<<<<<<< HEAD
 					url: "https://163.15.192.185/career/index.php/job/getJob/format/json",
 //					url: "https://163.15.192.185/career/index.php/job/get_job",
+=======
+					url: "http://163.15.192.185/career/index.php/job/getJob/format/json",
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 					dataType:"html",
 					cache: false,
 					success:onSuccess, 
@@ -46,7 +63,11 @@
 		{	
 			localStorage.setItem("web",null);
 			localStorage.setItem("web","weclome");
+<<<<<<< HEAD
 			console.log("data" + data);
+=======
+			//alert(data);
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 			localStorage.setItem("getdata",data);
 			location.href="get_job.html";
 			//alert(localStorage.getItem("getdata"));
@@ -85,8 +106,11 @@
 				</ul>
 			</div><!--/demo-html -->
 			</div>
+<<<<<<< HEAD
 			<div id="result">
 			</div>
+=======
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 		  </div>
 
 		  <div data-role="footer" data-theme="b">

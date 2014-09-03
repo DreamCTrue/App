@@ -51,11 +51,19 @@
                             "count": 1
                         },
                         {
+<<<<<<< HEAD
                             "xml": "<permission android:name=\"khimd.com.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"khimd.com.permission.C2D_MESSAGE\" />",
+=======
+                            "xml": "<permission android:name=\"com.khimd.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.khimd.permission.C2D_MESSAGE\" />",
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
                             "count": 1
                         }
                     ],
@@ -65,7 +73,11 @@
                             "count": 1
                         },
                         {
+<<<<<<< HEAD
                             "xml": "<receiver android:name=\"com.plugin.gcm.CordovaGCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"khimd.com\" /></intent-filter></receiver>",
+=======
+                            "xml": "<receiver android:name=\"com.plugin.gcm.CordovaGCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"com.khimd\" /></intent-filter></receiver>",
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
                             "count": 1
                         },
                         {
@@ -97,6 +109,7 @@
     },
     "installed_plugins": {
         "com.phonegap.plugins.PushPlugin": {
+<<<<<<< HEAD
             "PACKAGE_NAME": "khimd.com"
         },
         "org.apache.cordova.device": {
@@ -107,6 +120,18 @@
         },
         "org.apache.cordova.media": {
             "PACKAGE_NAME": "khimd.com"
+=======
+            "PACKAGE_NAME": "com.khimd"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.khimd"
+        },
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "com.khimd"
+        },
+        "org.apache.cordova.media": {
+            "PACKAGE_NAME": "com.khimd"
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
         }
     },
     "dependent_plugins": {}

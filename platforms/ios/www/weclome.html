@@ -6,18 +6,22 @@
 		<link rel="stylesheet" href="./js/jquery.mobile-1.4.3.min.css">
 		<script src="./js/jquery-1.7.1.min.js"></script>
 		<script src="./js/jquery.mobile-1.4.3.min.js"></script>
-		
+<!--		開啟推播功能 
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" src='js/gcm.js'></script> 
+		<script type="text/javascript" src="js/PushNotification.js"></script>
+-->		
 		<script>
 		$(document).ready(function(){
 			
 			//var a=localStorage.getItem("name");
 			
-			alert(localStorage.getItem("name"));
+			//alert(localStorage.getItem("name"));
 			
 			$("#job").click(function(){
 				var request = $.ajax({
 					type: "post",	
-					url: "http://163.15.192.185/career/index.php/job/get_job",
+					url: "http://163.15.192.185/career/index.php/job/getJob/format/json",
 					dataType:"html",
 					cache: false,
 					success:onSuccess, 
@@ -75,7 +79,7 @@
 				<ul data-role="listview" data-inset="true">
 					<li><button id="job">就業方向</button></li>
 					<li><a href="my_track.html" rel="external">我的追蹤</a></li>
-
+					<li><a href="push.html" rel="external">檢視推播訊息</a></li>
 				</ul>
 			</div><!--/demo-html -->
 			</div>

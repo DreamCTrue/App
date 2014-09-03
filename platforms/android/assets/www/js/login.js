@@ -44,7 +44,11 @@ $(document).ready(function(){
 				alert( "請輸入完整資料!!");
 			} else {
 				window.sessionStorage["id"] = $("#username").val();
+<<<<<<< HEAD
 				var request = $.ajax({
+=======
+				$.ajax({
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 					url: NASURL+qry_str,
 					type: "POST",	
 					cache: false,

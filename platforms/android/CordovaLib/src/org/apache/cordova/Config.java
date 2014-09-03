@@ -20,13 +20,18 @@
 package org.apache.cordova;
 
 import java.io.IOException;
+<<<<<<< HEAD
 
 import java.util.Locale;
 
+=======
+import java.util.Locale;
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.cordova.LOG;
+<<<<<<< HEAD
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -35,6 +40,13 @@ import android.app.Activity;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 
+=======
+import org.xmlpull.v1.XmlPullParserException;
+
+import android.app.Activity;
+import android.content.res.XmlResourceParser;
+import android.graphics.Color;
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 import android.util.Log;
 
 public class Config {
@@ -44,6 +56,11 @@ public class Config {
     private Whitelist whitelist = new Whitelist();
     private String startUrl;
 
+<<<<<<< HEAD
+=======
+    private static String errorUrl;
+
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
     private static Config self = null;
 
     public static void init(Activity action) {
@@ -156,6 +173,13 @@ public class Config {
                         boolean value = xml.getAttributeValue(null, "value").equals("true");
                         action.getIntent().putExtra(name, value);
                     }
+<<<<<<< HEAD
+=======
+                    else if(name.equalsIgnoreCase("errorurl"))
+                    {
+                        errorUrl = xml.getAttributeValue(null, "value");
+                    }
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
                     else
                     {
                         String value = xml.getAttributeValue(null, "value");
@@ -230,4 +254,11 @@ public class Config {
         }
         return self.startUrl;
     }
+<<<<<<< HEAD
+=======
+
+    public static String getErrorUrl() {
+        return errorUrl;
+    }
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 }

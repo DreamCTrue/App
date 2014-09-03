@@ -8,6 +8,106 @@
 		<script src="js/jquery.mobile-1.4.3.min.js"></script>
 	</head>
 	
+	<script>
+		$(document).ready(function(){
+			$.ajax({
+				type:"post",
+				url:"http://163.15.192.185/career/index.php/my_track/tracked",
+				datatype:"html",
+				cache:false,
+				success:success,
+				error:error
+				/*
+				data:{
+					s_id:localStorage.getItem("name")
+				}
+				*/
+			});
+		});
+		
+		function success(data)
+		{
+			alert(data);
+			new_table(data);
+		}
+		
+		function error(data)
+		{
+			alert('false');
+		}
+		
+		function new_table(data)
+		{
+			var track_data=JSON.parse(data);
+			if (track_data!=null)
+			{
+				for (var i=0;i<track_data.length;i++)
+				{	
+					//在table裡面新增tr(橫排)
+					$("<tr/>", {
+						"id":"tr_"+i
+					}).appendTo("#movie-table-custom");
+					
+					$("<td/>",{
+						"id":"tda_"+i
+					}).appendTo("#tr_"+i);
+					$("<td/>",{
+						"id":"tdb_"+i
+					}).appendTo("#tr_"+i);				
+					$("<td/>",{
+						"id":"tdc_"+i
+					}).appendTo("#tr_"+i);
+					$("<td/>",{
+						"id":"tdd_"+i
+					}).appendTo("#tr_"+i);
+					
+					
+					$("<tr/>", {
+						"class": "work",
+						"text": track_data[i]['j_complete']
+					}).appendTo("#tda_"+i);
+						
+
+						$("<tr/>", {
+							"class": "work",
+							"text": track_data[i]['j_date']
+						}).appendTo("#tdb_"+i);
+
+						$("<a/>", {
+							"href": track_data[i]['j_url'],
+							"text": track_data[i]['j_name']
+						}).appendTo("#tdb_"+i);
+						
+						$("<tr/>", {
+							"class": "work",
+							"text": track_data[i]['j_cname']
+						}).appendTo("#tdb_"+i);
+						$("<tr/>", {
+							"class": "work",
+							"text": track_data[i]['j_address']
+						}).appendTo("#tdb_"+i);
+						
+						
+						$("<a/>", {
+							"class": "work",
+							"text":"查看"
+						}).appendTo("#tdc_"+i);
+						
+						
+						$("<button/>", {
+							"id":"btn."+i,
+							"class": "work_btn",
+							"text": "刪除",
+							"onlick":"reply_click(this.id)"
+						}).appendTo("#tdd_"+i);
+				}
+			}
+		}
+		
+		
+	</script>
+	
+	
 	<body>
 		<div data-role="page" data-theme="c">
 		     <div data-role="header" data-theme="b" align="center">
@@ -36,62 +136,12 @@
 								   
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <th style="width:30%">
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-								  </th>
-								  <th>
-									8/13<br/>
-									程式 設計 工程師(資訊部-台北)<br/>
-									春源鋼鐵工業股份有限公司<br/>
-									台北市中山區<br/>
-								  </th>
-								  <th><a href="ability.html" rel="external">查看</a></th>
-								  <th><input type="button" value="刪除"/></th>
-		
-								</tr>
-								<tr>
-								  <th>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-								  </th>
-								  <th>
-									8/14<br/>
-									Android工程師(高薪應聘)<br/>
-									感覺不錯有限公司(MyBigDay)<br/>
-									台北市松山區<br/>
-								  </th>
-								  <th><a href="ability.html" rel="external">查看</a></th>
-								  <th><input type="button" value="刪除"/></th>
-								</tr>
-								<tr>
-								   <th>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-									<img height=25px width=25px src="pic/images.jpg"/>
-								  </th>
-								  <th>
-									8/14<br/>
-									INV12008-Android APP程式設計師<br/>
-									大碩文化事業【股】</td>
-									台北市中正區<br/>
-								  </th>
-								  <th><a href="ability.html" rel="external">查看</a></th>
-								  <th><input type="button" value="刪除"/></th>
-								</tr>
-							  </tbody>
+							 
 							</table>					
 						</li>
 				</ul>
 		  </div>
-
+			<button>test</button>
 		  <div data-role="footer" data-theme="b">
 		  <h1></h1>
 		  </div>

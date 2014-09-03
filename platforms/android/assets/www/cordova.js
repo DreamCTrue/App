@@ -1,5 +1,9 @@
 // Platform: android
+<<<<<<< HEAD
 // 3.5.0
+=======
+// 3.5.1
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -19,7 +23,11 @@
  under the License.
 */
 ;(function() {
+<<<<<<< HEAD
 var CORDOVA_JS_BUILD_LABEL = '3.5.0';
+=======
+var CORDOVA_JS_BUILD_LABEL = '3.5.1';
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 // file: src/scripts/require.js
 
 /*jshint -W079 */

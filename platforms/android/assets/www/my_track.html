@@ -8,6 +8,109 @@
 		<script src="js/jquery.mobile-1.4.3.min.js"></script>
 	</head>
 	
+<<<<<<< HEAD
+=======
+	<script>
+		$(document).ready(function(){
+			$.ajax({
+				type:"post",
+				url:"http://163.15.192.185/career/index.php/my_track/tracked",
+				datatype:"html",
+				cache:false,
+				success:success,
+				error:error
+				/*
+				data:{
+					s_id:localStorage.getItem("name")
+				}
+				*/
+			});
+		});
+		
+		function success(data)
+		{
+			alert(data);
+			new_table(data);
+		}
+		
+		function error(data)
+		{
+			alert('false');
+		}
+		
+		function new_table(data)
+		{
+			var track_data=JSON.parse(data);
+			if (track_data!=null)
+			{
+				for (var i=0;i<track_data.length;i++)
+				{	
+					//在table裡面新增tr(橫排)
+					$("<tr/>", {
+						"id":"tr_"+i
+					}).appendTo("#movie-table-custom");
+					
+					$("<td/>",{
+						"id":"tda_"+i
+					}).appendTo("#tr_"+i);
+					$("<td/>",{
+						"id":"tdb_"+i
+					}).appendTo("#tr_"+i);				
+					$("<td/>",{
+						"id":"tdc_"+i
+					}).appendTo("#tr_"+i);
+					$("<td/>",{
+						"id":"tdd_"+i
+					}).appendTo("#tr_"+i);
+					
+					
+					$("<tr/>", {
+						"class": "work",
+						"text": track_data[i]['j_complete']
+					}).appendTo("#tda_"+i);
+						
+
+						$("<tr/>", {
+							"class": "work",
+							"text": track_data[i]['j_date']
+						}).appendTo("#tdb_"+i);
+
+						$("<a/>", {
+							"href": track_data[i]['j_url'],
+							"text": track_data[i]['j_name']
+						}).appendTo("#tdb_"+i);
+						
+						$("<tr/>", {
+							"class": "work",
+							"text": track_data[i]['j_cname']
+						}).appendTo("#tdb_"+i);
+						$("<tr/>", {
+							"class": "work",
+							"text": track_data[i]['j_address']
+						}).appendTo("#tdb_"+i);
+						
+						
+						$("<a/>", {
+							"class": "work",
+							"text":"查看"
+						}).appendTo("#tdc_"+i);
+						
+						
+						$("<button/>", {
+							"id":"btn."+i,
+							"class": "work_btn",
+							"text": "刪除",
+							"onlick":"reply_click(this.id)"
+						}).appendTo("#tdd_"+i);
+				}
+			}
+		}
+		
+		
+	</script>
+	
+	
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 	<body>
 		<div data-role="page" data-theme="c">
 		     <div data-role="header" data-theme="b" align="center">
@@ -36,6 +139,7 @@
 								   
 								</tr>
 							  </thead>
+<<<<<<< HEAD
 							  <tbody>
 								<tr>
 								  <th style="width:30%">
@@ -87,11 +191,18 @@
 								  <th><input type="button" value="刪除"/></th>
 								</tr>
 							  </tbody>
+=======
+							 
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 							</table>					
 						</li>
 				</ul>
 		  </div>
+<<<<<<< HEAD
 
+=======
+			<button>test</button>
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 		  <div data-role="footer" data-theme="b">
 		  <h1></h1>
 		  </div>

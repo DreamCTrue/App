@@ -68,7 +68,11 @@ import android.widget.FrameLayout;
 public class CordovaWebView extends WebView {
 
     public static final String TAG = "CordovaWebView";
+<<<<<<< HEAD
     public static final String CORDOVA_VERSION = "3.5.0";
+=======
+    public static final String CORDOVA_VERSION = "3.5.1";
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
 
     private ArrayList<Integer> keyDownCodes = new ArrayList<Integer>();
     private ArrayList<Integer> keyUpCodes = new ArrayList<Integer>();
@@ -406,6 +410,7 @@ public class CordovaWebView extends WebView {
             this.loadUrlNow(url);
         }
         else {
+<<<<<<< HEAD
 
             String initUrl = this.getProperty("url", null);
 
@@ -417,6 +422,9 @@ public class CordovaWebView extends WebView {
             else {
                 this.loadUrlIntoView(initUrl);
             }
+=======
+            this.loadUrlIntoView(url);
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
         }
     }
 
@@ -427,6 +435,7 @@ public class CordovaWebView extends WebView {
      * @param url
      * @param time              The number of ms to wait before loading webview
      */
+<<<<<<< HEAD
     public void loadUrl(final String url, int time) {
         String initUrl = this.getProperty("url", null);
 
@@ -437,6 +446,17 @@ public class CordovaWebView extends WebView {
         // Otherwise use the URL specified in the activity's extras bundle
         else {
             this.loadUrlIntoView(initUrl);
+=======
+    @Deprecated
+    public void loadUrl(final String url, int time) {
+        if(url == null)
+        {
+            this.loadUrlIntoView(Config.getStartUrl());
+        }
+        else
+        {
+            this.loadUrlIntoView(url);
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
         }
     }
 

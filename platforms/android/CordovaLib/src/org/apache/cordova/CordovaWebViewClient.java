@@ -61,6 +61,10 @@ public class CordovaWebViewClient extends WebViewClient {
 	private static final String CORDOVA_EXEC_URL_PREFIX = "http://cdv_exec/";
     CordovaInterface cordova;
     CordovaWebView appView;
+<<<<<<< HEAD
+=======
+    CordovaUriHelper helper;
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
     private boolean doClearHistory = false;
     boolean isCurrentlyLoading;
 
@@ -85,6 +89,10 @@ public class CordovaWebViewClient extends WebViewClient {
     public CordovaWebViewClient(CordovaInterface cordova, CordovaWebView view) {
         this.cordova = cordova;
         this.appView = view;
+<<<<<<< HEAD
+=======
+        helper = new CordovaUriHelper(cordova, view);
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
     }
 
     /**
@@ -94,6 +102,10 @@ public class CordovaWebViewClient extends WebViewClient {
      */
     public void setWebView(CordovaWebView view) {
         this.appView = view;
+<<<<<<< HEAD
+=======
+        helper = new CordovaUriHelper(cordova, view);
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
     }
 
 
@@ -125,6 +137,7 @@ public class CordovaWebViewClient extends WebViewClient {
      */
 	@Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
+<<<<<<< HEAD
     	// Check if it's an exec() bridge command message.
     	if (NativeToJsMessageQueue.ENABLE_LOCATION_CHANGE_EXEC_MODE && url.startsWith(CORDOVA_EXEC_URL_PREFIX)) {
     		handleExecUrl(url);
@@ -231,6 +244,9 @@ public class CordovaWebViewClient extends WebViewClient {
             }
         }
         return true;
+=======
+        return helper.shouldOverrideUrlLoading(view, url);
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
     }
     
     /**
@@ -361,7 +377,23 @@ public class CordovaWebViewClient extends WebViewClient {
         // Clear timeout flag
         this.appView.loadUrlTimeout++;
 
+<<<<<<< HEAD
         // Handle error
+=======
+        // If this is a "Protocol Not Supported" error, then revert to the previous
+        // page. If there was no previous page, then punt. The application's config
+        // is likely incorrect (start page set to sms: or something like that)
+        if (errorCode == WebViewClient.ERROR_UNSUPPORTED_SCHEME) {
+            if (view.canGoBack()) {
+                view.goBack();
+                return;
+            } else {
+                super.onReceivedError(view, errorCode, description, failingUrl);
+            }
+        }
+
+        // Handle other errors by passing them to the webview in JS
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
         JSONObject data = new JSONObject();
         try {
             data.put("errorCode", errorCode);

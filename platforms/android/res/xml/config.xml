@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
+<<<<<<< HEAD
 <widget id="khimd.com" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+=======
+<widget id="com.khimd" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidLaunchMode" value="singleTop" />
     <feature name="App">
@@ -26,11 +30,19 @@
     <icon density="hdpi" src="res/android/android.png" />
     <icon density="xhdpi" src="res/android/android.png" />
     <name>career</name>
+<<<<<<< HEAD
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
+=======
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
     </author>
     <content src="index.html" />
     <access origin="*" />

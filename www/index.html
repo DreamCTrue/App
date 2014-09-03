@@ -9,11 +9,8 @@
 		<script type="text/javascript" src="./js/login.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-        <!--<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-        <script type="text/javascript" charset="utf-8" src="jquery_1.5.2.min.js"></script>-->
-        <script type="text/javascript" src="PushNotification.js"></script>
-   		<div d="index" data-url="index" data-role="page" data-theme="c">
+	<!--	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+		<div data-role="page" data-theme="c">
 			<div data-role="header" data-theme="b" align="center">
 				<P>大專生即時就業媒合系統<P>		
 			</div>
@@ -22,8 +19,7 @@
 			<div id="status"></div>
 			</body>
 			<div data-role="content">
-				<div id="result">
-				</div>
+
 				<div id="id">
 					<label for="id">帳號：</label>
 					<input type="text" name="username" id="username" placeholder="學號....." data-theme="d">
@@ -40,8 +36,8 @@
 						<option value="on">On</option>
 					</select>
 				  </div>
-				<div id ="login1" align="right">
-					<button class="ui-btn ui-btn-inline" id="login">登入</button>
+				<div id ="login1" align="right" >
+					<button  data-theme="b" id="login">登入</button>
 				</div>
 			</div>
 

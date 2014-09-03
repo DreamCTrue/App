@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\KHUSC\careermobile\platforms\android\ant-build\classes.dex : \
 C:\Users\KHUSC\careermobile\platforms\android\ant-build\classes\com\plugin\gcm\CordovaGCMBroadcastReceiver.class \
 C:\Users\KHUSC\careermobile\platforms\android\ant-build\classes\com\plugin\gcm\GCMIntentService.class \
@@ -62,3 +63,16 @@ C:\Users\KHUSC\careermobile\platforms\android\ant-build\classes\org\apache\cordo
 C:\Users\KHUSC\careermobile\platforms\android\ant-build\dexedLibs\classes-25e2e9bc25f1124789507619bd111ee5.jar \
 C:\Users\KHUSC\careermobile\platforms\android\ant-build\dexedLibs\gcm-b5e1cc2536226729ee583b8b779fec42.jar \
 C:\Users\KHUSC\careermobile\platforms\android\ant-build\dexedLibs\android-support-v13-5237fcea1ab52a4b0fba1e5d350fd318.jar \
+=======
+C:\Users\showshow\Career\platforms\android\ant-build\classes.dex : \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\BuildConfig.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\career.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\Manifest$permission.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\Manifest.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\R$attr.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\R$drawable.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\R$string.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\R$xml.class \
+C:\Users\showshow\Career\platforms\android\ant-build\classes\com\khimd\R.class \
+C:\Users\showshow\Career\platforms\android\ant-build\dexedLibs\classes-c58036bfa5abac4beab795561d53072d.jar \
+>>>>>>> 0d1f5f0b900a9bbf4c3f38d8d8a59a6dd4204324
