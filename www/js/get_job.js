@@ -69,12 +69,12 @@ $(document).ready(function(){
 			
 		else if(web=="advance")
 		{
-			var d=localStorage.getItem("data");
-			console.log(d);
-			var e=JSON.parse(d);
-			if (e!=null)
+			var a=localStorage.getItem("data");
+			console.log(a);
+			var b=JSON.parse(a);
+			if (b!=null)
 			{
-				for (var i=0;i<e.length;i++)
+				for (var i=0;i<b.length;i++)
 				{	
 					//在table裡面新增tr(橫排)
 					$("<tr/>", {
@@ -94,33 +94,34 @@ $(document).ready(function(){
 					
 					$("<tr/>", {
 						"class": "work",
-						"text": e[i]['j_complete']
+						"text": b[i]['j_complete']
 					}).appendTo("#tda_"+i);
 					
 
 					$("<tr/>", {
 						"class": "work",
-						"text": e[i]['j_date']
+						"text": b[i]['j_date']
 					}).appendTo("#tdb_"+i);
 
 					$("<a/>", {
-						"href": e[i]['j_url'],
-						"text": e[i]['j_name']
+						"href": b[i]['j_url'],
+						"text": b[i]['j_name']
 					}).appendTo("#tdb_"+i);
 					
 					$("<tr/>", {
 						"class": "work",
-						"text": e[i]['j_cname']
+						"text": b[i]['j_cname']
 					}).appendTo("#tdb_"+i);
 					$("<tr/>", {
 						"class": "work",
-						"text": e[i]['j_address']
+						"text": b[i]['j_address']
 					}).appendTo("#tdb_"+i);
 					
 					$("<button/>", {
 						"id":"btn."+i,
-						"class": "work",
-						"text": "追蹤"
+						"class": "work_btn",
+						"text": "追蹤",
+						"onlick":"reply_click(this.id)"
 							}).appendTo("#tdc_"+i);
 				}
 			}
@@ -159,6 +160,7 @@ function success(data)
 {
 //	alert(data);
 	console.log('success');
+	alert('追蹤成功');
 }
 
 function error(data)
