@@ -1,12 +1,25 @@
 $(document).ready(function(){
 		var web=localStorage.getItem("web");
+		var b;
 		if(web=="welcome")
 		{
 			
-			var a=localStorage.getItem("getdata");
-			console.log(a);
-			var b=JSON.parse(a);
-			console.log(b);
+//			var a = localStorage.getItem("getdata");
+			var request = $.ajax({
+				async: false, //synchronous requests
+				type: "post",	
+				url: "https://163.15.192.185/career/index.php/job/getJob/format/json",
+				dataType:"html",
+				cache: false,
+				success:function(data, status){b=JSON.parse(data);}, 
+				error: function(data,status){alert("error:"+data);},		
+				data: {
+					id:localStorage.getItem("name")
+				}
+			});			
+//			console.log(a);
+//			var b=JSON.parse(a);
+//			console.log(b);
 			
 			//var refurl=document.referrer;
 			//alert(refurl);

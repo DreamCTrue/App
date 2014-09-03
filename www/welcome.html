@@ -21,6 +21,10 @@
 //			alert(localStorage.getItem("name"));
 
 			$("#job").click(function(){
+				localStorage.setItem("web","welcome");
+				location.href="get_job.html";
+				event.preventDefault();			
+/*			
 				var request = $.ajax({
 					type: "post",	
 					url: "https://163.15.192.185/career/index.php/job/getJob/format/json",
@@ -30,8 +34,9 @@
 					error: onError,		
 					data: {
 						id:localStorage.getItem("name")
-					}
+					}				
 				});
+*/					
 			});
 		});
 		
