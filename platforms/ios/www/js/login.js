@@ -44,7 +44,7 @@ $(document).ready(function(){
 				alert( "請輸入完整資料!!");
 			} else {
 				window.sessionStorage["id"] = $("#username").val();
-				var request = $.ajax({
+				$.ajax({
 					url: NASURL+qry_str,
 					type: "POST",	
 					cache: false,
