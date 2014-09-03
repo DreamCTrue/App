@@ -1,6 +1,6 @@
 $(document).ready(function(){
 		var web=localStorage.getItem("web");
-		if(web=="weclome")
+		if(web=="welcome")
 		{
 			
 			var a=localStorage.getItem("getdata");
