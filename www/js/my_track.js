@@ -79,6 +79,7 @@ $(document).ready(function(){
 						
 						$("<a/>", {
 							"class": "work",
+							"href": "https://163.15.192.185/career/index.php/my_track/jobCompetition/format/html?s_id=" + localStorage.getItem("name") + "&j_name=" + track_data[i]['j_name'],
 							"text":"查看"
 						}).appendTo("#tdc_"+i);
 						
