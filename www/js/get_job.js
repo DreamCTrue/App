@@ -74,12 +74,13 @@ function getJob(page) {
 				$("<button/>", {
 					"id":"btn."+i,
 					"class": "work_btn",
-					"text": "追蹤",
-					"onlick":"reply_click(this.id)"
+					"text": "追蹤"
 				}).appendTo("#tdc_"+i);
+				//$("#movie-table-custom").append("<td>"+data[$i].p_date+"</td>");
 		}
 	}	
 }
+
 $(document).ready(function(){
 		var web=localStorage.getItem("web");
 		//if(localStorage.getItem("page")==null)
@@ -151,7 +152,7 @@ $(document).ready(function(){
 		
 		$('#btnPrevious').click(function(){
 			
-			var page = val(localStorage.getItem("page"));
+			var page = eval(localStorage.getItem("page"));
 			console.log("btnPrevious - " + page);
 			if(page>1) {
 				localStorage.setItem('page',page - 1);
