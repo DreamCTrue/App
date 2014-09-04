@@ -79,8 +79,9 @@ $(document).ready(function(){
 						
 						$("<a/>", {
 							"class": "work",
-							"href": "https://163.15.192.185/career/index.php/my_track/jobCompetition/format/html?s_id=" + localStorage.getItem("name") + "&j_name=" + track_data[i]['j_name'],
-							"text":"查看"
+							"href": "#",	//https://163.15.192.185/career/index.php/my_track/jobCompetition/format/html?s_id=" + localStorage.getItem("name") + "&j_name=" + track_data[i]['j_name']
+							"text":"查看",
+							"onclick":"saveJob('" + track_data[i]['j_name'] + "')"
 						}).appendTo("#tdc_"+i);
 						
 						
@@ -94,7 +95,12 @@ $(document).ready(function(){
 				}
 			}
 		}
-		
+		function saveJob(job)
+		{
+			console.log("jobName");
+			localStorage.setItem("jobName",job);
+			location.href="ability.html";
+		}
 		function reply_click(x)
 		{
 			console.log(x);

@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="./js/jquery.mobile-1.4.3.min.css">
 		<script src="./js/jquery-1.7.1.min.js"></script>
 		<script src="js/jquery.mobile-1.4.3.min.js"></script>
+		<script type="text/javascript" src="./js/ability.js"></script>
 	</head>
 	<body>
 		<div data-role="page" data-theme="c">
@@ -19,70 +20,33 @@
 			</div>
 		  </div>
 		  <div  align="center" data-role="content">
-			<h3>程式設計工程師</h3>			
+			<h3><div id="jobName"></div></h3>			
 		  </div>			
 				
 						<ul data-role="listview" data-inset="true" data-shadow="false">
 							<div data-role="collapsible"  data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" class="ui-collapsible">
 								<h2 class="ui-collapsible-heading">
-									<span class="ui-btn-text">一年級<h3 style="color:red">完成30%</h3><span class="ui-collapsible-heading-status"> click to collapse contents</span></span>
+									<span class="ui-btn-text">須具備課程<h3 style="color:red" id="requireCourseP"></h3><span class="ui-collapsible-heading-status"> click to collapse contents</span></span>
 								</h2>
-								<ul data-role="listview" data-inset="true" data-shadow="false">								
-									<form>
-										<fieldset data-role="controlgroup">
-											<h3>
-												會計學<br/>
-												管理學<br/>
-												資訊科技應用<br/>
-												數位媒體概論<br/>
-												程式設計(一)<br/>
-												微積分(一)<br/>
-												資料處理<br/>
-												經濟學<br/>
-												計算機概論<br/>
-												資訊管理導論<br/>
-												程式設計(二)<br/>
-												微積分(二)<br/>
-											</h3>										
-										</fieldset>
-									</form>
+								<ul data-role="listview" data-inset="true" data-shadow="false" id="requireCourse">								
+
 								</ul>
 							</div>
 							
 							<div data-role="collapsible"  data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" class="ui-collapsible">
 								<h2 class="ui-collapsible-heading">
-									<span class="ui-btn-text">二年級<span class="ui-collapsible-heading-status"> click to collapse contents</span></span>
+									<span class="ui-btn-text">已修課程<h3 style="color:red" id="completeCourseP"></h3><span class="ui-collapsible-heading-status"> click to collapse contents</span></span>
 								</h2>
-								<ul data-role="listview" data-inset="true" data-shadow="false">								
-									<form>
-										<fieldset data-role="controlgroup">
-											
-										</fieldset>
-									</form>
+								<ul data-role="listview" data-inset="true" data-shadow="false" id="completeCourse">								
+
 								</ul>
 							</div>
 							<div data-role="collapsible"  data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" class="ui-collapsible">
 								<h2 class="ui-collapsible-heading">
-									<span class="ui-btn-text">三年級<span class="ui-collapsible-heading-status"> click to collapse contents</span></span>
+									<span class="ui-btn-text">尚待修讀的課程<h3 style="color:red" id="pendCourseP"></h3><span class="ui-collapsible-heading-status"> click to collapse contents</span></span>
 								</h2>
-								<ul data-role="listview" data-inset="true" data-shadow="false">								
-									<form>
-										<fieldset data-role="controlgroup">
-											
-										</fieldset>
-									</form>
-								</ul>
-							</div>
-							<div data-role="collapsible"  data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-inset="false" class="ui-collapsible">
-								<h2 class="ui-collapsible-heading">
-									<span class="ui-btn-text">四年級<span class="ui-collapsible-heading-status"> click to collapse contents</span></span>
-								</h2>
-								<ul data-role="listview" data-inset="true" data-shadow="false">								
-									<form>
-										<fieldset data-role="controlgroup">
-											
-										</fieldset>
-									</form>
+								<ul data-role="listview" data-inset="true" data-shadow="false" id="pendCourse">								
+
 								</ul>
 							</div>
 						</ul>
