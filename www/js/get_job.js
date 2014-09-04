@@ -1,6 +1,6 @@
-
+var jobs = null;
 function getJob(page) {
-	var b;
+
 	var request = $.ajax({
 		async: false, //synchronous requests
 		type: "post",	
@@ -23,8 +23,10 @@ function getJob(page) {
 	
 	if (b!=null)
 	{
+		jobs=b;
 		$( "#pagenum" ).text("Page " + localStorage.getItem("page"));
-		$("#movie-table-custom").empty();
+//		$("#movie-table-custom").empty();
+		$("#movie-table-custom tr").remove();
 		for (var i=0;i<b.length;i++)
 		{	
 			//在table裡面新增tr(橫排)
@@ -164,12 +166,13 @@ $(document).ready(function(){
 			localStorage.setItem('page',page + 1);
 			getJob();
 		});
-
+//		$('button').click(function(){console.log("input - " + $(this).id);});
 		$('.work_btn').click(function(){
 			var id=this.id;
 			var splits=new Array();
 			split=id.split(".");
-			
+			console.log("work_btn - " + id);
+//			console.log(jobs);
 			$.ajax({
 				type:"post",
 				url:"https://163.15.192.185/career/index.php/my_track/track",
@@ -179,11 +182,11 @@ $(document).ready(function(){
 				error:error,
 				data:{
 					s_id:localStorage.getItem("name"),
-					j_name:b[split[1]]['j_name'],
-					j_url:b[split[1]]['j_url'],
-					j_cname:b[split[1]]['j_cname'],
-					j_address:b[split[1]]['j_address'],
-					j_date:b[split[1]]['j_date']
+					j_name:jobs[split[1]]['j_name'],
+					j_url:jobs[split[1]]['j_url'],
+					j_cname:jobs[split[1]]['j_cname'],
+					j_address:jobs[split[1]]['j_address'],
+					j_date:jobs[split[1]]['j_date']
 				}
 			});
 			$(this).attr("disabled",true);
