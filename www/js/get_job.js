@@ -23,6 +23,7 @@ function getJob(page) {
 	
 	if (b!=null)
 	{
+		$( "#pagenum" ).text("Page " + localStorage.getItem("page"));
 		$("#movie-table-custom").empty();
 		for (var i=0;i<b.length;i++)
 		{	
