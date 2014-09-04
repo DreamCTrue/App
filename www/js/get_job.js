@@ -1,86 +1,92 @@
-$(document).ready(function(){
-		var web=localStorage.getItem("web");
-		var b;
-		if(web=="welcome")
-		{
-			
-//			var a = localStorage.getItem("getdata");
-			var request = $.ajax({
-				async: false, //synchronous requests
-				type: "post",	
-				url: "https://163.15.192.185/career/index.php/job/getJob/format/json",
-				dataType:"html",
-				cache: false,
-				success:function(data, status){b=JSON.parse(data);}, 
-				error: function(data,status){alert("error:"+data);},		
-				data: {
-					id:localStorage.getItem("name")
-				}
-			});			
+
+function getJob(page) {
+	var b;
+	var request = $.ajax({
+		async: false, //synchronous requests
+		type: "post",	
+		url: "https://163.15.192.185/career/index.php/job/getJob/format/json",
+		dataType:"html",
+		cache: false,
+		success:function(data, status){b=JSON.parse(data);}, 
+		error: function(data,status){alert("error:"+data);},		
+		data: {
+			id:localStorage.getItem("name"),
+			page:localStorage.getItem("page")
+		}
+	});			
 //			console.log(a);
 //			var b=JSON.parse(a);
 //			console.log(b);
+	
+	//var refurl=document.referrer;
+	//alert(refurl);
+	
+	if (b!=null)
+	{
+		$("#movie-table-custom").empty();
+		for (var i=0;i<b.length;i++)
+		{	
+			//在table裡面新增tr(橫排)
 			
-			//var refurl=document.referrer;
-			//alert(refurl);
+			$("<tr/>", {
+				"id":"tr_"+i
+			}).appendTo("#movie-table-custom");
 			
-			if (b!=null)
-			{
-				for (var i=0;i<b.length;i++)
-				{	
-					//在table裡面新增tr(橫排)
-					$("<tr/>", {
-						"id":"tr_"+i
-					}).appendTo("#movie-table-custom");
-					
-					$("<td/>",{
-						"id":"tda_"+i
-					}).appendTo("#tr_"+i);
-					$("<td/>",{
-						"id":"tdb_"+i
-					}).appendTo("#tr_"+i);				
-					$("<td/>",{
-						"id":"tdc_"+i
-					}).appendTo("#tr_"+i);
-					
-					
-					$("<tr/>", {
-						"class": "work",
-						"text": b[i]['j_complete']
-					}).appendTo("#tda_"+i);
-						
+			$("<td/>",{
+				"id":"tda_"+i
+			}).appendTo("#tr_"+i);
+			$("<td/>",{
+				"id":"tdb_"+i
+			}).appendTo("#tr_"+i);				
+			$("<td/>",{
+				"id":"tdc_"+i
+			}).appendTo("#tr_"+i);
+			
+			
+			$("<tr/>", {
+				"class": "work",
+				"text": b[i]['j_complete']
+			}).appendTo("#tda_"+i);
+				
 
-						$("<tr/>", {
-							"class": "work",
-							"text": b[i]['j_date']
-						}).appendTo("#tdb_"+i);
+				$("<tr/>", {
+					"class": "work",
+					"text": b[i]['j_date']
+				}).appendTo("#tdb_"+i);
 
-						$("<a/>", {
-							"href": b[i]['j_url'],
-							"text": b[i]['j_name']
-						}).appendTo("#tdb_"+i);
-						
-						$("<tr/>", {
-							"class": "work",
-							"text": b[i]['j_cname']
-						}).appendTo("#tdb_"+i);
-						$("<tr/>", {
-							"class": "work",
-							"text": b[i]['j_address']
-						}).appendTo("#tdb_"+i);
-						
-						$("<button/>", {
-							"id":"btn."+i,
-							"class": "work_btn",
-							"text": "追蹤",
-							"onlick":"reply_click(this.id)"
-						}).appendTo("#tdc_"+i);
-				}
-			}
+				$("<a/>", {
+					"href": b[i]['j_url'],
+					"text": b[i]['j_name']
+				}).appendTo("#tdb_"+i);
+				
+				$("<tr/>", {
+					"class": "work",
+					"text": b[i]['j_cname']
+				}).appendTo("#tdb_"+i);
+				$("<tr/>", {
+					"class": "work",
+					"text": b[i]['j_address']
+				}).appendTo("#tdb_"+i);
+				
+				$("<button/>", {
+					"id":"btn."+i,
+					"class": "work_btn",
+					"text": "追蹤",
+					"onlick":"reply_click(this.id)"
+				}).appendTo("#tdc_"+i);
 		}
-
-			
-		else if(web=="advance")
+	}	
+}
+$(document).ready(function(){
+		var web=localStorage.getItem("web");
+		//if(localStorage.getItem("page")==null)
+		localStorage.setItem('page',1);
+		
+		if(web=="welcome")
+		{
+			getJob();
+//			var a = localStorage.getItem("getdata");
+		} else if (web=="advance")
 		{
 			var a=localStorage.getItem("data");
 			console.log(a);
@@ -140,6 +146,24 @@ $(document).ready(function(){
 			}
 		}
 		
+		$('#btnPrevious').click(function(){
+			
+			var page = val(localStorage.getItem("page"));
+			console.log("btnPrevious - " + page);
+			if(page>1) {
+				localStorage.setItem('page',page - 1);
+				getJob();
+			}
+		
+		});
+		
+		$('#btnNext').click(function(){
+			var page = eval(localStorage.getItem("page"));
+			console.log("btnNext - " + page);
+			localStorage.setItem('page',page + 1);
+			getJob();
+		});
+
 		$('.work_btn').click(function(){
 			var id=this.id;
 			var splits=new Array();
@@ -147,7 +171,7 @@ $(document).ready(function(){
 			
 			$.ajax({
 				type:"post",
-				url:"http://163.15.192.185/career/index.php/my_track/track",
+				url:"https://163.15.192.185/career/index.php/my_track/track",
 				datatype:"html",
 				cache:false,
 				success:success,
