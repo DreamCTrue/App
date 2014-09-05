@@ -114,7 +114,7 @@ static char launchNotificationKey;
 {
     self.launchNotification	= nil; // clear the association and release the object
 }
-
+// enable https ajax
 @end
 @implementation NSURLRequest(DataController)
 + (BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host
